@@ -2,21 +2,22 @@
 
 HumainB::HumainB(std::string name): name(name)
 {
-    weapon = new Weapon("default weapon");
+    this->weapon = new Weapon("no weapon");
 }
 
 HumainB::~HumainB() 
 {
-   
 }
 
-void HumainB::setWeapon( Weapon& w)
+void HumainB::setWeapon(Weapon& w)
 {
     delete weapon;
 
-    weapon = &w;
+    this->weapon = &w;
    
 }
+
+
 
 void HumainB::attack()
 {

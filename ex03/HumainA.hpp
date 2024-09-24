@@ -8,7 +8,7 @@
 
 class HumainA{
 public:
-	HumainA(std::string name, Weapon& weapon);
+	HumainA(std::string name, Weapon &weapon);
 	~HumainA();
 	void attack();
 private:

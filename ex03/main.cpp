@@ -7,7 +7,7 @@ int main() {
     HumainA human("John", sword);
     HumainB test("Marc");
     human.attack();
-    sword.setType("lance a double lame");
+    sword.setType("dague");
     human.attack();
 
     Weapon club = Weapon("crude spiked club");

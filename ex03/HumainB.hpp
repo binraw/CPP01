@@ -7,8 +7,8 @@ public:
 	HumainB(std::string name);
 	~HumainB();
 	void attack();
-	void setWeapon(Weapon& w);
-	void getWeapon(const std::string weapon);
+	void setWeapon( Weapon& w);
+	
 private:
 	Weapon* weapon;
 	std::string name;

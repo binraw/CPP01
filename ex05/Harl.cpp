@@ -1,35 +1,57 @@
 #include "Harl.hpp"
-#include <functional>
+
 
 Harl::Harl()
 {
+    action[0] = NULL;
+    action[1] = &Harl::debug;
+    action[2] = &Harl::info;
+    action[3] = &Harl::warning;
+    action[4] = &Harl::error;
 }
 
 Harl::~Harl()
 {
 }
+// void Harl::*action[5](void) = 
+// {
+//     NULL,
+//     &Harl::debug,
+//     &Harl::info,
+//     &Harl::warning,
+//     &Harl::error
+// }
 
 
-void Harl::complain(std::string level)
+void Harl::complain(int index)
 {
-    int lvl;
-    try
+    if (index >= 0 && index < 5 && action[index] != NULL)
     {
-        lvl = std::stoi(level);
-        std::function <void()> action[] = {NULL, std::bind(&Harl::debug, this), std::bind(&Harl::info, this), std::bind(&Harl::warning, this), std::bind(&Harl::error, this)};
-        if (lvl > 0 && lvl <= 4)
-            action[lvl]();
-        else 
-            std::cout << "Error level";
+        (this->*action[index])();
     }
-    catch (const std::invalid_argument&)
+    else
     {
-        std::cout << "Invalid input. Please enter a valid level." << std::endl;
+        std::cout << "Invalid action index" << std::endl;
     }
-    catch (const std::out_of_range&) 
-    {
-        std::cout << "Index out of range. Please enter a valid level." << std::endl;
-	} 
+    // int lvl;
+    // try
+    // {
+    //     std::istringstream iss(level);
+    //     iss >> lvl;
+    //     action[] = {NULL, &Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    //     if (lvl > 0 && lvl <= 4)
+    //         action[lvl]();
+    //     else 
+    //         std::cout << "Error level";
+    // }
+    // catch (const std::invalid_argument&)
+    // {
+    //     std::cout << "Invalid input. Please enter a valid level." << std::endl;
+    // }
+    // catch (const std::out_of_range&) 
+    // {
+    //     std::cout << "Index out of range. Please enter a valid level." << std::endl;
+	// } 
 
 
 }

@@ -5,7 +5,7 @@
 #include <string>
 
 void replaceInFile(const std::string& filename, const std::string& s1, const std::string& s2) {
-    std::ifstream inputFile(filename);
+    std::ifstream inputFile(filename.c_str());
     if (!inputFile.is_open()) {
         std::cerr << "Could not open the file: " << filename << std::endl;
         return;
@@ -25,7 +25,7 @@ void replaceInFile(const std::string& filename, const std::string& s1, const std
     }
 
     std::string outputFilename = filename + ".replace";
-    std::ofstream outputFile(outputFilename);
+    std::ofstream outputFile(outputFilename.c_str());
     if (!outputFile.is_open()) {
         std::cerr << "Could not create the file: " << outputFilename << std::endl;
         return;

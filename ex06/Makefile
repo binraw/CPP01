@@ -1,4 +1,4 @@
-NAME = Harl
+NAME = harlFilter
 
 
 SRCS_FILE = Harl.cpp main.cpp
