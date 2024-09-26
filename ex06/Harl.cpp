@@ -16,7 +16,7 @@ Harl::~Harl()
 
 void Harl::complain(int index)
 {
-    while (index <= 4)
+    while (index <= 4 && index > 0)
     {
         switch (index)
         {

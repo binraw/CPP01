@@ -10,7 +10,6 @@ public:
     Harl();
     ~Harl();
     void complain(int index);
-    // void *action[5](void);
    
 private:
     void debug(void);

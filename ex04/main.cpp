@@ -4,15 +4,18 @@
 #include <fstream>
 #include <string>
 
-void replaceInFile(const std::string& filename, const std::string& s1, const std::string& s2) {
+void replaceInFile(const std::string& filename, const std::string& s1, const std::string& s2)
+{
     std::ifstream inputFile(filename.c_str());
-    if (!inputFile.is_open()) {
+    if (!inputFile.is_open())
+    {
         std::cerr << "Could not open the file: " << filename << std::endl;
         return;
     }
     std::string content;
     std::string line;
-    while (std::getline(inputFile, line)) {
+    while (std::getline(inputFile, line))
+    {
         content += line + "\n"; 
     }
     inputFile.close();
@@ -26,7 +29,8 @@ void replaceInFile(const std::string& filename, const std::string& s1, const std
 
     std::string outputFilename = filename + ".replace";
     std::ofstream outputFile(outputFilename.c_str());
-    if (!outputFile.is_open()) {
+    if (!outputFile.is_open())
+    {
         std::cerr << "Could not create the file: " << outputFilename << std::endl;
         return;
     }
@@ -35,7 +39,8 @@ void replaceInFile(const std::string& filename, const std::string& s1, const std
 }
 
 int main(int argc, char* argv[]) {
-    if (argc != 4) {
+    if (argc != 4)
+    {
         std::cerr << "Usage: " << argv[0] << " <filename> <s1> <s2>" << std::endl;
         return 1;
     }

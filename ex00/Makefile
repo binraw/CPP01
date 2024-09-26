@@ -4,8 +4,8 @@ NAME = Zombie
 SRCS_FILE = newZombie.cpp randomChump.cpp Zombie.cpp main.cpp
 HEADER_FILE = Zombie.hpp
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CC = cpp
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 
 
@@ -22,7 +22,7 @@ ${NAME}: ${OBJS}
 
 
 
-%.o: %.c  Makefile ${HEADER_FILE}
+%.o: %.cpp  Makefile ${HEADER_FILE}
 	$(CXX) ${CFLAGS} -c $< -o $@
 
 clean:

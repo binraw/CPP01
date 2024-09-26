@@ -15,5 +15,7 @@ int main(void)
     harl.complain(0);
     std::cout << "Test with 231414" << std::endl;
     harl.complain(231414);
+    std::cout << "Test with -23" << std::endl;
+    harl.complain(-23);
     return 0;
 }
